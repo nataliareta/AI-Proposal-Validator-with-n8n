@@ -32,9 +32,7 @@ The workflow runs on a scheduled trigger and retrieves proposal submissions from
 
 ### 2. Document Processing
 
-Each selected submission is processed individually. The workflow retrieves the proposal PDF from Google Drive and extracts its text for analysis.
-
-PDFs without extractable text are handled separately to avoid sending empty documents to Gemini.
+Each selected submission is processed individually. The workflow retrieves the proposal PDF from Google Drive and extracts its text for analysis; PDFs without extractable text are handled separately to avoid sending empty documents to Gemini.
 
 ### 3. Identity Verification
 
@@ -46,15 +44,11 @@ Google Gemini analyzes the proposal and extracts structured information, such as
 
 ### 5. Rule-Based Validation
 
-The extracted information is evaluated against configurable validation rules.
-
-Proposals that meet the requirements can receive a **Valid** verdict, while those with confirmed rule violations can receive an **Invalid** verdict. Proposals requiring additional information or manual review are not automatically finalized.
+The extracted information is evaluated against configurable validation rules; Proposals that meet the requirements can receive a **Valid** verdict, while those with confirmed rule violations can receive an **Invalid** verdict. Proposals requiring additional information or manual review are not automatically finalized.
 
 ### 6. Automated Reporting
 
-Completed validation results are written back to Google Sheets, including the final verdict and relevant feedback.
-
-Before updating, the workflow checks the current verdict to reduce duplicate or unnecessary updates.
+Completed validation results are written back to Google Sheets, including the final verdict and relevant feedback; Before updating, the workflow checks the current verdict to reduce duplicate or unnecessary updates.
 
 ## Technology Stack
 
@@ -78,7 +72,7 @@ Before updating, the workflow checks the current verdict to reduce duplicate or 
 
 ### Installation
 
-1. Download the workflow JSON from [`workflow/ai-proposal-validator.json`](workflow/ai-proposal-validator.json).
+1. Download the workflow JSON from [`workflow/ai-proposal-validator.json`](workflow/smart-proposal-reviewer.json).
 2. Open your n8n instance.
 3. Create a new workflow.
 4. Import the JSON file.
@@ -136,10 +130,10 @@ When adapting this project:
 
 ## Project Purpose
 
-This project was developed to explore how **AI-assisted document processing and workflow automation** can improve operational efficiency, reduce repetitive validation tasks, and create more structured review processes.
-
-It demonstrates the combination of operational problem-solving, AI integration, data validation, and automation engineering within a practical workflow.
+This project was developed to explore how **AI-assisted document processing and workflow automation** can improve operational efficiency, reduce repetitive validation tasks, and create more structured review processes. It demonstrates the combination of operational problem-solving, AI integration, data validation, and automation engineering within a practical workflow.
 
 ## Disclaimer
 
 This repository provides an adaptable workflow template rather than a fully configured deployment. Integrations and validation requirements must be configured and tested in the user's own environment before production use.
+
+-Nata-
